@@ -76,9 +76,11 @@ def checkThings(evt) {
     }
     
     if(shouldRun && !state.fanRunning) {
+        log.info "Starting fan.";
     	fans.on();
         state.fanRunning = true;
     } else if(!shouldRun && state.fanRunning) {
+        log.info "Stopping fan.";
     	fans.off();
         state.fanRunning = false;
     }
